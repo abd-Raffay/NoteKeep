@@ -1,0 +1,71 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div>
+                <h2 style="text-align: center">Enter Valid Information to Register</h2>
+            </div>
+            <form>
+                <fieldset>
+                    <label for="Name"><span class="req">* </span> Name:</label>
+                    <input required type="text" [(ngModel)]="user.name" name="name" id="name" class="form-control phone"
+                        maxlength="28" #name="ngModel" placeholder="Enter your fullname...">
+
+                    <div class="form-group">
+                        <label for="email"><span class="req">* </span> Email:
+                        </label>
+                        <input class="form-control" type="email" [(ngModel)]="user.email" name="email" id="email"
+                            title="Enter a valid email address" placeholder="Enter valid email address" required
+                            [email]="user.email!==''" #email="ngModel">
+
+                        <span class="help-block" *ngIf="email.errors?.required && email.touched">Email
+                            is Required</span>
+                        <span class="help-block" *ngIf="email.errors?.email && email.touched ">Email
+                            is invalid</span>
+
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age"><span class="req">* </span> Age: </label>
+                        <input class="form-control" type="number" [(ngModel)]="user.age" name="age"
+                            id="age" placeholder="Age > 18" required>
+                            <span class="help-block">
+                                <ul><li>Age > 18</li></ul> </span>
+            
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"><span class="req">* </span>
+                            Password: </label>
+                        <input class="form-control" required type="password" [(ngModel)]="user.password" name="password"
+                            id="password" placeholder="Enter a valid password" required >
+
+                        <span class="help-block">
+                            <ul>
+                                <li>Length: ≥ 8 characters</li>
+                                <li>Uppercase: ≥ 1 (A-Z)</li>
+                                <li>Lowercase: ≥ 1 (a-z)</li>
+                                <li>Special Characters: ≥ 1 (!, @, #, $, etc.)</li>
+                                <li>Numbers: ≥ 1 (0-9) </li>
+                            </ul>
+                        </span>
+                    </div>
+
+                    <div class="col-md-offset-9">
+                        <button mat-raised-button color="primary" (click)="registerNow()">Register</button>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+
+    </div>
+</div>

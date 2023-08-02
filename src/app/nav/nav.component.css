@@ -1,0 +1,41 @@
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:rgb(40, 45, 130);
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .logo img {
+    height: 40px;
+    width: auto;
+  }
+  
+  .buttons button {
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
+
+
+  }
+  
+  
+  .logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+  }
+
+  .buttons {
+    margin-left: auto;
+  }
+  
+  .logo {
+    margin-right: auto;
+  }
+  .userid{
+    color:white;
+  }
+  
+  

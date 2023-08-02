@@ -1,0 +1,13 @@
+.table-container {
+
+    margin: 0 auto;
+    width: 80%; /* Adjust the width as needed */
+  
+  
+
+}
+.grid-container {
+  display: grid;
+  place-items: center;
+  height: 100vh; /* Adjust the height as needed */
+}

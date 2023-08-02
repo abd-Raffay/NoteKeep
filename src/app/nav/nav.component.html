@@ -1,0 +1,17 @@
+<nav class="navbar">
+  
+
+    <i class="fa-solid fa-house fa-xl enlarge-icon" style="color: #ffffff;"></i>
+    
+
+    <div class="buttons" *ngIf="activeflag==0">
+      <button mat-stroked-button color="basic"  (click)="login()">Login </button>
+      <button mat-stroked-button color="basic"  (click)="register()" >Register</button>
+    </div>
+    <div class="buttons" *ngIf="activeflag==1">
+      
+      <!--<p class="userid" color="" >User Id : {{userid+100}}-->
+      <button mat-stroked-button color="primary"  (click)="SignOut()" routerLink="/" routerLinkActive="active"><i class="fas fa-sign-out-alt"></i> Sign Out </button>
+
+    </div>
+</nav>

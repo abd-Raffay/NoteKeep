@@ -1,0 +1,73 @@
+
+<ng-container [ngSwitch]="data.dialogType">
+
+    <!-- Edit Dialog-->
+    <ng-container *ngSwitchCase="'edit'">
+        <h2 mat-dialog-title>Edit Note</h2>
+        <mat-dialog-content>
+
+            <!-- TEXTAREA FOR ENTERING NOTES -->
+
+            <textarea type="textarea" [(ngModel)]="note[noteindex].content"
+                class="textarea" name="textarea" rows="12" cols="75" id="textarea" required></textarea><br>
+
+        </mat-dialog-content>
+        <mat-dialog-actions>
+
+            <button mat-raised-button color="primary" mat-dialog-close
+                 (click)="UpdateNote()">Save</button>
+            <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+        </mat-dialog-actions>
+    </ng-container>
+
+    <!-- ADD Dialog-->
+    <ng-container *ngSwitchCase="'add'">
+
+        <h2 mat-dialog-title>Add Note</h2>
+
+        <!-- TEXTAREA FOR ENTERING NOTES -->
+
+        <textarea type="textarea" [(ngModel)]="note.content" name="textarea"
+            rows="12" cols="75" id="textarea"
+            class="textarea" placeholder="Start Adding Notes..." required></textarea><br>
+
+        <mat-dialog-actions>
+
+            <!-- SAVE BUTTON FOR SAVING NOTES -->
+            <button mat-raised-button color="primary"
+                [disabled]="!(note.content)"
+                (click)="createnote() " mat-dialog-close>Add</button>
+            <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+        </mat-dialog-actions>
+    </ng-container>
+
+    <!-- Delete Dialog-->
+    <ng-container *ngSwitchCase="'delete'">
+        <h2 mat-dialog-title>Delete Note?</h2>
+        <mat-dialog-content>
+           <p> This will delete the note </p>
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button mat-raised-button color="basic" mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="warn" mat-dialog-close (click)="DeleteNote()">Delete</button>
+         
+        </mat-dialog-actions>
+    </ng-container>
+
+    <!-- Show Dialog-->
+    <ng-container *ngSwitchCase="'show'">
+
+        <h2>Content</h2>
+
+        <mat-dialog-content>
+           <!-- <p >{{ notelist[noteindex].content }}</p>-->
+            <p class="modal-content">{{ data.message }}</p>
+        </mat-dialog-content>
+
+        <mat-dialog-actions>
+            <button mat-button mat-dialog-close>Close</button>
+        </mat-dialog-actions>
+
+    </ng-container>
+
+</ng-container>

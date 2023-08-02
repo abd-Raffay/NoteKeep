@@ -1,0 +1,43 @@
+
+
+<!-- SHOWING ALL NOTES -->
+
+<div class='container-fluid'>
+
+    <div class="row" class=" col-md-offset">
+
+        <h2>My Notes</h2>
+        <button mat-raised-button color="primary" (click)="openadddialog()"> <i
+                class="fa-solid fa-plus"></i> Add</button>
+        <br><br>
+        <table class="table table-hover" border="bold">
+            <thead class="table-active">
+                <tr>
+                    <th scope="col">Content</th>
+                    <th scope="col" class="col-md-6">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tabcontent">
+                <tr *ngFor="let alphabet of notelist ; let i = index"
+                    (click)="getIndex(i)" class="table-default">
+                    <td>{{ alphabet.content | truncate: 25 }} </td>
+                    <td>
+                        <button mat-raised-button color="basic"
+                            (click)="getIndex(i)" (click)="openshowdialog()"><i
+                                class="fa-regular fa-eye"></i> Show</button>
+                        &nbsp;&nbsp;
+                        <button mat-raised-button color="primary"
+                            (click)="getIndex(i)" (click)="openeditdialog()"><i
+                                class="fa-regular fa-pen-to-square"></i> Edit</button>
+                        &nbsp;&nbsp;
+                        <button mat-raised-button color="warn"
+                            (click)="getIndex(i)" (click)="opendeletedialog()"><i
+                                class="fa-solid fa-trash"></i> Delete</button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
