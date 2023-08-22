@@ -6,15 +6,17 @@
 
     <div class="row" class=" col-md-offset">
 
-        <h2>My Notes</h2>
-        <button mat-raised-button color="primary" (click)="openadddialog()"> <i
-                class="fa-solid fa-plus"></i> Add</button>
+        <h2 style="text-align: center;">My Notes</h2>
+        <h3 style="text-align: center;">Want to Create more Notes?
+        <button  mat-raised-button color="primary" (click)="openadddialog()"> <i
+                class="fa-solid fa-plus" ></i> Create</button></h3>
         <br><br>
+        <div class="table-container">
         <table class="table table-hover" border="bold">
             <thead class="table-active">
-                <tr>
-                    <th scope="col">Content</th>
-                    <th scope="col" class="col-md-6">Actions</th>
+                <tr >
+                    <th scope="col" style="width:10%" >Content</th>
+                    <th scope="col" class="col-md-6" style="width:10%;text-align: center;" >Actions</th>
                 </tr>
             </thead>
             <tbody id="tabcontent">
@@ -22,14 +24,16 @@
                     (click)="getIndex(i)" class="table-default">
                     <td>{{ alphabet.content | truncate: 25 }} </td>
                     <td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <button mat-raised-button color="basic"
                             (click)="getIndex(i)" (click)="openshowdialog()"><i
                                 class="fa-regular fa-eye"></i> Show</button>
-                        &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <button mat-raised-button color="primary"
                             (click)="getIndex(i)" (click)="openeditdialog()"><i
                                 class="fa-regular fa-pen-to-square"></i> Edit</button>
-                        &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <button mat-raised-button color="warn"
                             (click)="getIndex(i)" (click)="opendeletedialog()"><i
                                 class="fa-solid fa-trash"></i> Delete</button>
@@ -38,6 +42,7 @@
                 </tr>
             </tbody>
         </table>
+    </div>
 
     </div>
 </div>

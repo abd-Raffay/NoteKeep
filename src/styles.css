@@ -1,5 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.table-container {
+    
+   
+    align-items: center;
+    height: 100vh; /* Set the table container's height to fill the viewport */
+  }
+  
+  /* Apply styling to the table cells */
+  .table td, .table th {
+    vertical-align: middle; /* Vertically align the content */
+  }
+  
+  /* Apply additional styling to the buttons */
+  .mat-raised-button {
+    margin: 0 5px; /* Add spacing between buttons */
+  }
+  
+  /* Apply additional styling to the icons */
+  .fa-regular, .fa-solid {
+    margin-right: 5px; /* Add spacing to the right of icons */
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .table th {
+      display: none; /* Hide headers on smaller screens */
+    }
+    .table td {
+      display: block;
+      text-align: center; /* Center-align content on smaller screens */
+    }}

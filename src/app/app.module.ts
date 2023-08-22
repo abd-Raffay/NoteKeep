@@ -14,33 +14,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalComponent } from './modal/modal.component';
 import { MaterialModule } from './material/material.module';
 import { TruncatePipe } from './truncate.pipe';
+import { PopoverModule } from 'ngx-smart-popover';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RegistrationComponent,
-    LoginComponent,
-    NavComponent,
-    UserdetailsComponent,
-    ModalComponent,
-    TruncatePipe,
-   
-    
-
-   
-  ],
-  entryComponents:[ModalComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MaterialModule
-  ],
-  providers: [UserRegistrationService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        RegistrationComponent,
+        LoginComponent,
+        NavComponent,
+        UserdetailsComponent,
+        ModalComponent,
+        TruncatePipe,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        PopoverModule
+    ],
+    providers: [UserRegistrationService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -34,28 +34,38 @@
 
                     <div class="form-group">
                         <label for="age"><span class="req">* </span> Age: </label>
-                        <input class="form-control" type="number" [(ngModel)]="user.age" name="age"
-                            id="age" placeholder="Age > 18" required>
-                            <span class="help-block">
-                                <ul><li>Age > 18</li></ul> </span>
-            
+                        <input [popover]="agepopover" class="form-control" type="number" [(ngModel)]="user.age"
+                            name="age" id="age" placeholder="Age > 18" required>
+
+                        <popover-content #agepopover title="" popoverPlacement="bottom" [animation]="true"
+                            [closeOnClickOutside]="true">
+                            <li>Age > 18</li>
+                        </popover-content>
+
+
+
                     </div>
 
                     <div class="form-group">
                         <label for="password"><span class="req">* </span>
                             Password: </label>
-                        <input class="form-control" required type="password" [(ngModel)]="user.password" name="password"
-                            id="password" placeholder="Enter a valid password" required >
+                        <input [popover]="popOver" class="form-control" required type="password"
+                            [(ngModel)]="user.password" name="password" id="password"
+                            placeholder="Enter a valid password" required>
+                        <popover-content #popOver title="" popoverPlacement="bottom" [animation]="true"
+                            [closeOnClickOutside]="true">
 
-                        <span class="help-block">
-                            <ul>
-                                <li>Length: ≥ 8 characters</li>
-                                <li>Uppercase: ≥ 1 (A-Z)</li>
-                                <li>Lowercase: ≥ 1 (a-z)</li>
-                                <li>Special Characters: ≥ 1 (!, @, #, $, etc.)</li>
-                                <li>Numbers: ≥ 1 (0-9) </li>
-                            </ul>
-                        </span>
+                            <li>Length: ≥ 8 characters</li>
+                            <li>Uppercase: ≥ 1 (A-Z)</li>
+                            <li>Lowercase: ≥ 1 (a-z)</li>
+                            <li>Special Characters: ≥ 1 (!, @, #, $)</li>
+                            <li>Numbers: ≥ 1 (0-9) </li>
+                        </popover-content>
+
+
+
+
+
                     </div>
 
                     <div class="col-md-offset-9">

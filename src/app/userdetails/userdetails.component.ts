@@ -2,7 +2,8 @@ import { Component, OnInit,Inject, Input } from '@angular/core';
 import { UserRegistrationService } from '../user-registration.service';
 import { User } from '../user';
 import { Notes } from '../notes';
-import { MatDialog,MatDialogRef,MAT_DIALOG_DATA } from '@angular/material'
+import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { Router } from '@angular/router';
 
